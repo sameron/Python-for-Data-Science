@@ -1,0 +1,16 @@
+import tensorflow as tf
+
+# Define the model
+model = tf.keras.Sequential()
+model.add(tf.keras.layers.Conv2D(filters=32, kernel_size=3, padding='same', activation='relu', input_shape=(224, 224, 3)))
+model.add(tf.keras.layers.MaxPooling2D(pool_size=2))
+model.add(tf.keras.layers.Conv2D(filters=64, kernel_size=3, padding='same', activation='relu'))
+model.add(tf.keras.layers.MaxPooling2D(pool_size=2))
+model.add(tf.keras.layers.Flatten())
+model.add(tf.keras.layers.Dense(units=128, activation='relu'))
+model.add(tf.keras.layers.Dense(units=10, activation='softmax'))
+
+# Compile the model
+model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),
+              loss=tf.keras.losses.SparseCategoricalCrossentropy(),
+              metrics=[tf.keras.metrics.SparseCategoricalAccuracy()])
