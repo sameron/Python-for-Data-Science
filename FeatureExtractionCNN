@@ -1,3 +1,14 @@
+"""
+**CNN for detecting faults/cracks, etc in images of glass lenses**
+Acquire images of the glass: This could be done using a camera or other imaging device.
+Pre-process the images: This might involve tasks such as noise reduction, color correction, or edge enhancement to improve the quality of the images and make it easier to detect cracks.
+Extract features from the images: This could involve using techniques such as edge detection or texture analysis to identify features in the images that are indicative of cracks.
+Train a machine learning model: Using the extracted features, a machine learning model could be trained to classify images as containing cracks or not containing cracks.
+Test the model: The trained model could be tested on a set of images that it has not seen before to evaluate its performance.
+Use the model to detect cracks in new images: Once the model has been trained and tested, it can be used to detect cracks in new images of glass.
+
+"""
+
 import tensorflow as tf
 
 # Load the pre-trained model
