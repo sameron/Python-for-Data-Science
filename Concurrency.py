@@ -2,6 +2,8 @@ import concurrent.futures
 import time
 
 
+# Define a function for the concurrency testing 
+# This sets up n number of computations, to be later computer at the same time
 def compute_something(n):
     print(f"Computing something {n}")
     time.sleep(1)
