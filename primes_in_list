@@ -1,0 +1,6 @@
+# function that takes a list of integers and returns a new list with all the integers that are prime numbers
+
+def primes_in_list(lst: [int]) -> [int]:
+    return [num for num in lst if all(num % i != 0 for i in range(2, num))]
+    
+    
