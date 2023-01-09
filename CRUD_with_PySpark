@@ -1,0 +1,30 @@
+from pyspark.sql import SparkSession
+
+# Create a SparkSession
+spark = SparkSession.builder.appName("MyApp").getOrCreate()
+
+# Create a DataFrame
+df = spark.createDataFrame([("Alice", 20), ("Bob", 30), ("Charlie", 40)], ["name", "age"])
+
+# Print the DataFrame
+df.show()
+
+# Filter the DataFrame
+df_filtered = df.filter(df.age > 25)
+df_filtered.show()
+
+# Aggregate the DataFrame
+df_agg = df.groupBy("name").avg("age")
+df_agg.show()
+
+# Transform the DataFrame
+df_transformed = df.withColumn("age_plus_1", df.age + 1)
+df_transformed.show()
+
+# Update a value in the DataFrame
+df_updated = df.withColumn("age", df.age + 10)
+df_updated.show()
+
+# Delete a row from the DataFrame
+df_deleted = df.filter(df.name != "Charlie")
+df_deleted.show()
